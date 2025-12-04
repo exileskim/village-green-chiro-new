@@ -1,79 +1,70 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle
-    const mobileBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
+    // Mobile Navigation
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
 
-    mobileBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        
-        // Animate hamburger to X
-        const bars = mobileBtn.querySelectorAll('.bar');
-        if (navLinks.classList.contains('active')) {
-            bars[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
-            bars[1].style.opacity = '0';
-            bars[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
-        } else {
-            bars[0].style.transform = 'none';
-            bars[1].style.opacity = '1';
-            bars[2].style.transform = 'none';
-        }
-    });
+    if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+        });
 
-    // Smooth Scroll for Anchor Links
+        // Close menu when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('active');
+                toggle.classList.remove('active');
+            });
+        });
+    }
+
+    // Smooth scroll with offset for fixed nav
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            // Close mobile menu if open
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                // Reset hamburger
-                const bars = mobileBtn.querySelectorAll('.bar');
-                bars[0].style.transform = 'none';
-                bars[1].style.opacity = '1';
-                bars[2].style.transform = 'none';
-            }
+            const href = this.getAttribute('href');
+            if (href === '#') return;
 
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                // Account for fixed header
-                const headerOffset = 80;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                const navHeight = document.querySelector('.nav').offsetHeight;
+                const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
 
                 window.scrollTo({
-                    top: offsetPosition,
+                    top: top,
                     behavior: 'smooth'
                 });
             }
         });
     });
 
-    // Simple Intersection Observer for fade-in animations
+    // Fade-in on scroll
     const observerOptions = {
+        root: null,
+        rootMargin: '0px',
         threshold: 0.1
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
+                fadeObserver.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Add animation classes to elements
-    const animatedElements = document.querySelectorAll('.feature-card, .service-item, .review-card, .about-text, .about-image');
-    
-    animatedElements.forEach(el => {
+    // Apply to sections
+    document.querySelectorAll('.section, .hero-content, .hero-image, .service-card, .testimonial, .doctor').forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(el);
+        el.style.transform = 'translateY(24px)';
+        el.style.transition = 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+        fadeObserver.observe(el);
+    });
+
+    // Stagger service cards
+    document.querySelectorAll('.service-card').forEach((card, i) => {
+        card.style.transitionDelay = `${i * 0.1}s`;
     });
 });
