@@ -4,30 +4,37 @@
 */
 
 :root {
-    /* Colors */
-    --primary-color: #064e3b; /* Deep Emerald */
-    --primary-light: #059669;
-    --secondary-color: #d1fae5; /* Sage Green */
-    --accent-color: #d97706; /* Gold/Brass */
-    --text-dark: #1f2937; /* Charcoal */
-    --text-light: #4b5563; /* Gray */
-    --bg-light: #f9fafb; /* Off-white */
+    /* Colors - Modern Medical / Professional */
+    --primary-color: #1e3a8a;
+    /* Deep Navy Blue */
+    --primary-light: #2563eb;
+    /* Royal Blue */
+    --secondary-color: #f1f5f9;
+    /* Light Slate/Grey */
+    --accent-color: #0ea5e9;
+    /* Sky Blue */
+    --text-dark: #1e293b;
+    /* Slate 800 */
+    --text-light: #64748b;
+    /* Slate 500 */
+    --bg-light: #f8fafc;
+    /* Very light slate */
     --white: #ffffff;
-    
+
     /* Typography */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
-    
+
     /* Spacing */
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
-    
+
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    
+
     /* Transitions */
     --transition: all 0.3s ease;
 }
@@ -50,7 +57,12 @@ body {
     background-color: var(--white);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     color: var(--primary-color);
     line-height: 1.2;
@@ -132,7 +144,8 @@ img {
 }
 
 .btn-secondary:hover {
-    background-color: #b45309;
+    background-color: #0284c7;
+    /* Darker Sky Blue */
     transform: translateY(-2px);
 }
 
@@ -214,15 +227,18 @@ img {
 
 /* Hero Section */
 .hero {
-    height: 90vh; /* Almost full height */
+    height: 90vh;
+    /* Almost full height */
     min-height: 600px;
-    background-image: url('../assets/hero_background.png'); /* Will need to ensure path is correct */
+    background-image: url('../assets/hero_background.png');
+    /* Will need to ensure path is correct */
     background-size: cover;
     background-position: center;
     position: relative;
     display: flex;
     align-items: center;
-    margin-top: 60px; /* Offset for fixed header */
+    margin-top: 60px;
+    /* Offset for fixed header */
 }
 
 .hero-overlay {
@@ -231,14 +247,15 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.1) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.1) 100%);
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
     max-width: 600px;
-    margin-left: 5%; /* Slight offset */
+    margin-left: 5%;
+    /* Slight offset */
 }
 
 .hero-title {
@@ -262,7 +279,8 @@ img {
 .features {
     padding: 4rem 0;
     background-color: var(--white);
-    margin-top: -4rem; /* Overlap hero slightly */
+    margin-top: -4rem;
+    /* Overlap hero slightly */
     position: relative;
     z-index: 10;
 }
@@ -377,7 +395,8 @@ img {
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0; /* Full width split */
+    gap: 0;
+    /* Full width split */
     background-color: var(--white);
     border-radius: 1rem;
     overflow: hidden;
@@ -404,7 +423,7 @@ img {
 .hours {
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hours h3 {
@@ -416,7 +435,7 @@ img {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding-bottom: 0.25rem;
 }
 
@@ -459,7 +478,8 @@ img {
         font-size: 2.5rem;
     }
 
-    .about-grid, .contact-grid {
+    .about-grid,
+    .contact-grid {
         grid-template-columns: 1fr;
     }
 
