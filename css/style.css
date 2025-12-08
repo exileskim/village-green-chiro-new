@@ -491,6 +491,7 @@ p {
     background-color: var(--color-sand);
     position: relative;
     overflow: hidden;
+    border-radius: 4px;
 }
 
 .team-image .image-frame img {
@@ -508,6 +509,7 @@ p {
     bottom: calc(var(--space-md) * -1);
     border: 2px solid var(--color-accent);
     z-index: -1;
+    border-radius: 4px;
 }
 
 .team-member {
