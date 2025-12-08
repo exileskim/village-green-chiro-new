@@ -16,3 +16,4 @@
     - **Visual Polish**: Added `border-radius: 4px` globally to buttons, service cards, testimonials, and image frames to create a softer, more organic aesthetic.
     - **Design Review Fixes**: Fixed 'Village Green' references, added Team nav link, fixed team-header spacing, removed duplicate/unused CSS.
     - **Hero Layout**: Redesigned hero section to be text-only, centered with a subtle background gradient, replacing the previous side-by-side image layout.
+    - **Design Polish**: Added nav CTA border-radius, fixed reviews link, added About section CTA, unique service icons, clearer trust bar wording, lazy-loaded team photo, and prefers-reduced-motion accessibility support.

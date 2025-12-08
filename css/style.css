@@ -237,6 +237,7 @@ p {
     background-color: var(--color-espresso);
     color: var(--color-cream) !important;
     padding: 0.75rem 1.5rem;
+    border-radius: 4px;
 }
 
 .nav-cta:hover {
@@ -781,10 +782,6 @@ p {
         display: flex;
     }
 
-    .nav-toggle {
-        display: flex;
-    }
-
     .hero {
         padding-top: calc(var(--nav-height) + var(--space-xl));
         min-height: auto;
@@ -824,5 +821,20 @@ p {
     .trust-divider {
         width: 40px;
         height: 1px;
+    }
+}
+
+/* ================================
+   ACCESSIBILITY
+   ================================ */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
