@@ -33,3 +33,7 @@
         - **Scroll Indicator**: Added an animated bouncing arrow at the bottom of the hero to encourage scrolling.
         - **Smooth Scroll**: Re-implemented smooth scrolling for all anchor links with fixed header offset.
         - **Testimonial Layout**: Made the 2-column grid collapse to single column at 900px for better tablet viewing.
+    - **Iteration Cycle 6 (Technical SEO)**:
+        - **Schema Markup**: Upgraded to a rich `Chiropractor` JSON-LD schema with split hours, price range, and aggregate rating.
+        - **Meta Data**: Optimized Title tag for local search ("Top Rated Chiropractor...") and updated Meta Description.
+        - **Accessibility**: Added descriptive `alt` text to team and about images, and a `title` attribute to the Google Maps iframe.
