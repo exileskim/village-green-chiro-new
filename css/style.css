@@ -121,6 +121,17 @@ p {
     text-transform: uppercase;
     color: var(--color-accent);
     margin-bottom: var(--space-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.section-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background-color: var(--color-accent);
+    display: block;
 }
 
 .section-title {
@@ -294,6 +305,17 @@ p {
     text-transform: uppercase;
     color: var(--color-accent);
     margin-bottom: var(--space-md);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.hero-tagline::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background-color: var(--color-accent);
+    display: block;
 }
 
 .hero-title {
