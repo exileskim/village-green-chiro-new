@@ -1,5 +1,5 @@
 /*
-  Village Green Chiropractic
+  Sennebogen Chiropractic
   Premium Design System v2
 */
 
@@ -137,7 +137,6 @@ p {
     font-family: var(--font-body);
     font-size: 0.875rem;
     font-weight: 500;
-    letter-spacing: 0.02em;
     letter-spacing: 0.02em;
     padding: 1rem 2rem;
     border-radius: 4px;
@@ -394,39 +393,6 @@ p {
     margin-top: var(--space-md);
 }
 
-.doctors {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-    margin-top: var(--space-xl);
-    padding-top: var(--space-xl);
-    border-top: 1px solid var(--color-sand);
-}
-
-.doctor {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-}
-
-.doctor-avatar {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background-color: var(--color-accent);
-    color: var(--color-cream);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-
-.doctor-info h4 {
-    margin-bottom: 0.25rem;
-}
-
 .doctor-info p {
     font-size: 0.875rem;
 }
@@ -472,7 +438,7 @@ p {
 .team-header {
     text-align: center;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto var(--space-xl);
 }
 
 .team-list {
