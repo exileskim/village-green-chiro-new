@@ -18,3 +18,7 @@
     - **Hero Layout**: Redesigned hero section to be text-only, centered with a subtle background gradient, replacing the previous side-by-side image layout.
     - **Design Polish**: Added nav CTA border-radius, fixed reviews link, added About section CTA, unique service icons, clearer trust bar wording, lazy-loaded team photo, and prefers-reduced-motion accessibility support.
     - **Eyebrows**: Enhanced section labels (eyebrows) with a decorative horizontal line to add visual structure and a premium feel.
+    - **Iteration Cycle 2**:
+        - **Footer**: Redesigned to a professional 3-column layout (Brand, Links, Info).
+        - **Testimonials**: Added elegant watermark-style quotation marks (`“`).
+        - **Polish**: Added global hover "lift" effects and ensured service cards are equal height.
