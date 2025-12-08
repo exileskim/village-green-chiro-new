@@ -22,3 +22,9 @@
         - **Footer**: Redesigned to a professional 3-column layout (Brand, Links, Info).
         - **Testimonials**: Added elegant watermark-style quotation marks (`“`).
         - **Polish**: Added global hover "lift" effects and ensured service cards are equal height.
+    - **Iteration Cycle 3 (Motion)**:
+        - **Scroll Animations**: Implemented `IntersectionObserver` to gently fade-in sections as they enter the viewport.
+        - **Trust Bar**: Added a dynamic count-up animation for stats (e.g., "0" -> "36+" Years).
+        - **Smart Header**: Navigation bar adds a subtle shadow/effect only when scrolling down.
+    - **Iteration Cycle 4 (Grid)**:
+        - **Service Grid**: Enforced a balanced 3-on-top, 2-on-bottom layout. Title heights are now uniform, and content is centered for a clean, consistent look.

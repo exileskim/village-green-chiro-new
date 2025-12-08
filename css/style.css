@@ -565,14 +565,19 @@ p {
 }
 
 .service-card {
-    flex: 1 1 250px;
-    max-width: 300px;
+    flex: 1 1 320px;
+    /* Forces wrap on large screens for 3-2 layout */
+    max-width: 400px;
     background-color: var(--color-cream);
     padding: var(--space-lg);
     transition: all var(--duration) var(--ease-out);
     border-radius: 4px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    /* Center align items */
+    text-align: center;
+    /* Center align text */
     height: 100%;
 }
 
@@ -583,13 +588,19 @@ p {
 
 .service-icon {
     display: block;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    /* Larger icon */
     color: var(--color-accent);
     margin-bottom: var(--space-sm);
 }
 
 .service-card h3 {
     margin-bottom: var(--space-xs);
+    min-height: 3rem;
+    /* Enforce line height uniformity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .service-card p {
