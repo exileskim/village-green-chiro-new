@@ -28,3 +28,8 @@
         - **Smart Header**: Navigation bar adds a subtle shadow/effect only when scrolling down.
     - **Iteration Cycle 4 (Grid)**:
         - **Service Grid**: Enforced a balanced 3-on-top, 2-on-bottom layout. Title heights are now uniform, and content is centered for a clean, consistent look.
+    - **Iteration Cycle 5 (Final Polish)**:
+        - **Hero Separator**: Added a decorative accent line below the hero title.
+        - **Scroll Indicator**: Added an animated bouncing arrow at the bottom of the hero to encourage scrolling.
+        - **Smooth Scroll**: Re-implemented smooth scrolling for all anchor links with fixed header offset.
+        - **Testimonial Layout**: Made the 2-column grid collapse to single column at 900px for better tablet viewing.
