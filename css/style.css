@@ -579,25 +579,15 @@ p {
     margin: 0 auto var(--space-xl);
 }
 
-/* Services Grid - Refactored to CSS Grid for 3-2 Layout */
+/* Services Grid - Refactored to Flexbox for 3-2 Layout */
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-md);
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: var(--space-md);
+    align-items: stretch;
+    /* Ensure equal height */
 }
-
-/* Force the last 2 items to center in the grid if there are 5 items total 
-   This is a neat trick: make the last 2 span 1.5 if we want, or just use flex for the last row? 
-   Actually, standard Grid usually aligns left. 
-   To get 3 top, 2 bottom centered:
-   We can make the grid 6 columns.
-   Row 1: 2-2-2 (3 items)
-   Row 2: 3-3 (2 items) - wait, that's hard with auto-placement.
-   
-   Better approach for "3 then 2 centered": Flexbox IS good, but the wrapping needs to be forced.
-   Let's stick to Flexbox but STRICTLY set the width.
-*/
 
 .services-grid {
     display: flex;
