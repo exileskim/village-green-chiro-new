@@ -579,32 +579,43 @@ p {
     margin: 0 auto var(--space-xl);
 }
 
+/* Services Grid - Refactored to CSS Grid for 3-2 Layout */
 .services-grid {
-    max-width: var(--max-width);
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    justify-content: center;
+}
+
+/* Force the last 2 items to center in the grid if there are 5 items total 
+   This is a neat trick: make the last 2 span 1.5 if we want, or just use flex for the last row? 
+   Actually, standard Grid usually aligns left. 
+   To get 3 top, 2 bottom centered:
+   We can make the grid 6 columns.
+   Row 1: 2-2-2 (3 items)
+   Row 2: 3-3 (2 items) - wait, that's hard with auto-placement.
+   
+   Better approach for "3 then 2 centered": Flexbox IS good, but the wrapping needs to be forced.
+   Let's stick to Flexbox but STRICTLY set the width.
+*/
+
+.services-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--space-md);
-}
-
-/* Global Hover Polish */
-.nav-cta:hover,
-.btn-text:hover {
-    transform: translateY(-2px);
-    display: inline-block;
-    /* Required for transform */
-}
-
-/* Service Card Equal Height */
-.services-grid {
     align-items: stretch;
+    /* Ensure equal height */
 }
 
 .service-card {
-    flex: 1 1 320px;
-    /* Forces wrap on large screens for 3-2 layout */
-    max-width: 400px;
+    /* 
+       Calc: (100% - (2 * gap)) / 3 
+       We want 3 items per row. Gap is space-md (assume 24px or similar).
+       Let's use a safe percentage basis.
+    */
+    flex: 0 1 calc(33.333% - var(--space-md));
+    min-width: 300px;
     background-color: var(--color-cream);
     padding: var(--space-lg);
     transition: all var(--duration) var(--ease-out);
@@ -612,10 +623,25 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Center align items */
     text-align: center;
-    /* Center align text */
-    height: 100%;
+    height: auto;
+    /* Allow stretch */
+}
+
+/* Ensure centering on the last row (Flexbox does this automatically with justify-content: center) */
+
+/* Mobile adjustment */
+@media (max-width: 900px) {
+    .service-card {
+        flex: 0 1 calc(50% - var(--space-md));
+    }
+}
+
+@media (max-width: 600px) {
+    .service-card {
+        flex: 1 1 100%;
+        max-width: 400px;
+    }
 }
 
 .service-card:hover {
@@ -625,7 +651,7 @@ p {
 
 .service-icon {
     display: block;
-    font-size: 2rem;
+    font-size: 2.5rem;
     /* Larger icon */
     color: var(--color-accent);
     margin-bottom: var(--space-sm);
@@ -633,11 +659,12 @@ p {
 
 .service-card h3 {
     margin-bottom: var(--space-xs);
-    min-height: 3rem;
-    /* Enforce line height uniformity */
+    min-height: 3.5rem;
+    /* Enforce uniform title height */
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 1.2;
 }
 
 .service-card p {
@@ -834,7 +861,7 @@ p {
     text-transform: uppercase;
 }
 
-.nav-logo .logo-text {
+.footer .nav-logo .logo-text {
     color: var(--color-cream);
 }
 
