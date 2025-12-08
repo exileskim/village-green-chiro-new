@@ -15,3 +15,4 @@
     - **Name Refinements**: Updated bios to refer to doctors as "Dr. Joe" (Sr.) and "Dr. Joey" (Jr.) per client preference.
     - **Visual Polish**: Added `border-radius: 4px` globally to buttons, service cards, testimonials, and image frames to create a softer, more organic aesthetic.
     - **Design Review Fixes**: Fixed 'Village Green' references, added Team nav link, fixed team-header spacing, removed duplicate/unused CSS.
+    - **Hero Layout**: Redesigned hero section to be text-only, centered with a subtle background gradient, replacing the previous side-by-side image layout.

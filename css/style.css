@@ -265,24 +265,29 @@ p {
    HERO
    ================================ */
 .hero {
-    min-height: 100vh;
+    min-height: 85vh;
+    /* Increase height for impact */
     padding-top: var(--nav-height);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: var(--space-xl);
+    text-align: center;
     max-width: var(--max-width);
     margin: 0 auto;
     padding-left: var(--space-lg);
     padding-right: var(--space-lg);
+    background-image: radial-gradient(circle at 50% 50%, rgba(232, 226, 217, 0.3) 0%, transparent 70%);
+    /* Subtle glow */
 }
 
 .hero-content {
-    padding: var(--space-2xl) 0;
+    padding: var(--space-xl) 0;
+    max-width: 800px;
 }
 
 .hero-tagline {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -292,12 +297,15 @@ p {
 
 .hero-title {
     margin-bottom: var(--space-md);
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    /* Slightly larger for text-only hero */
 }
 
 .hero-description {
-    font-size: 1.125rem;
-    max-width: 480px;
-    margin-bottom: var(--space-lg);
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    color: var(--color-charcoal);
 }
 
 .hero-actions {
@@ -305,20 +313,7 @@ p {
     flex-wrap: wrap;
     gap: var(--space-md);
     align-items: center;
-}
-
-.hero-image {
-    height: 100%;
-    min-height: 500px;
-    background-color: var(--color-sand);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    justify-content: center;
 }
 
 /* ================================
@@ -786,15 +781,13 @@ p {
         display: flex;
     }
 
-    .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        padding-top: calc(var(--nav-height) + var(--space-lg));
+    .nav-toggle {
+        display: flex;
     }
 
-    .hero-image {
-        min-height: 300px;
-        order: -1;
+    .hero {
+        padding-top: calc(var(--nav-height) + var(--space-xl));
+        min-height: auto;
     }
 
     .about-inner,
