@@ -13,4 +13,4 @@
     - **Team Section**: Added new styling for the `team` section to match the premium aesthetic.
     - **Team Photo**: Integrated new photo of Dr. Sennebogen Sr. and Jr. into the Meet Us section with a responsive side-by-side layout.
     - **Name Refinements**: Updated bios to refer to doctors as "Dr. Joe" (Sr.) and "Dr. Joey" (Jr.) per client preference.
-    - **Visual Polish**: Added `border-radius` to the team photo and accent border to soften the edges.
+    - **Visual Polish**: Added `border-radius: 4px` globally to buttons, service cards, testimonials, and image frames to create a softer, more organic aesthetic.
