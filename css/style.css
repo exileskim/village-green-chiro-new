@@ -923,6 +923,39 @@ p {
 }
 
 /* ================================
+   ANIMATIONS & INTERACTION
+   ================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delays for child elements if needed */
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    transition-delay: 0.3s;
+}
+
+/* Header Scrolled State */
+.nav.scrolled {
+    background-color: rgba(250, 248, 245, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ================================
    ACCESSIBILITY
    ================================ */
 @media (prefers-reduced-motion: reduce) {
@@ -934,5 +967,11 @@ p {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
 }
