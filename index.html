@@ -8,16 +8,30 @@
     <meta name="description"
         content="Sennebogen Chiropractic in Marietta (West Cobb). Father & son team Dr. Joe and Dr. Joey offer personalized adjustments, soft tissue therapy, and DOT physicals. Call today!">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <!-- Favicons -->
+    <link rel="icon" href="assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/favicon-192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Sennebogen Chiropractic | Marietta, GA">
     <meta property="og:description"
         content="Our Family Caring for Yours. Dr. Joe and Dr. Joey Sennebogen — a father-son team dedicated to restoring your health through personalized, compassionate chiropractic care.">
-    <meta property="og:image" content="assets/hero_premium.png">
-    <meta property="og:url" content="https://exileskim.github.io/village-green-chiro-new/">
+    <meta property="og:image" content="https://YOUR-DOMAIN-HERE/assets/hero_premium.png">
+    <!-- TODO: Replace with your production domain -->
+    <meta property="og:url" content="https://YOUR-DOMAIN-HERE/">
+    <link rel="canonical" href="https://YOUR-DOMAIN-HERE/">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sennebogen Chiropractic | Marietta, GA">
+    <meta name="twitter:description"
+        content="Our Family Caring for Yours. Dr. Joe and Dr. Joey Sennebogen — a father-son team dedicated to restoring your health through personalized, compassionate chiropractic care.">
+    <meta name="twitter:image" content="https://YOUR-DOMAIN-HERE/assets/hero_premium.png">
+
+    <meta name="theme-color" content="#2A2623">
 
     <!-- Schema.org LocalBusiness Markup -->
     <script type="application/ld+json">
@@ -26,8 +40,8 @@
         "@type": "Chiropractor",
         "name": "Sennebogen Chiropractic",
         "description": "Our Family Caring for Yours. Dr. Joe and Dr. Joey Sennebogen — a father-son team dedicated to restoring your health through personalized, compassionate chiropractic care in Marietta, GA.",
-        "image": "https://exileskim.github.io/village-green-chiro-new/assets/hero_premium.png",
-        "url": "https://exileskim.github.io/village-green-chiro-new/",
+        "image": "https://YOUR-DOMAIN-HERE/assets/hero_premium.png",
+        "url": "https://YOUR-DOMAIN-HERE/",
         "telephone": "+1-770-424-3331",
         "priceRange": "$$",
         "address": {
@@ -53,7 +67,7 @@
             {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Monday", "Wednesday", "Thursday"],
-                "opens": "15:00",
+                "opens": "14:00",
                 "closes": "18:00"
             },
             {
@@ -65,7 +79,7 @@
             {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Tuesday"],
-                "opens": "15:00",
+                "opens": "14:00",
                 "closes": "19:00"
             }
         ],
@@ -77,8 +91,7 @@
             "@type": "AggregateRating",
             "ratingValue": "4.9",
             "reviewCount": "50"
-        },
-        "priceRange": "$$"
+        }
     }
     </script>
 
@@ -94,6 +107,8 @@
 
 <body>
 
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-inner">
@@ -102,12 +117,13 @@
                 <span class="logo-sub">Chiropractic</span>
             </a>
 
-            <button class="nav-toggle" aria-label="Toggle menu">
+            <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-controls="nav-menu"
+                aria-expanded="false">
                 <span></span>
                 <span></span>
             </button>
 
-            <div class="nav-menu">
+            <div class="nav-menu" id="nav-menu">
                 <a href="#about">About</a>
                 <a href="#team">Team</a>
                 <a href="#services">Services</a>
@@ -117,8 +133,10 @@
         </div>
     </nav>
 
-    <!-- Hero -->
-    <header class="hero">
+    <main id="main-content">
+
+        <!-- Hero -->
+        <header class="hero">
         <div class="hero-content">
             <p class="hero-tagline">Chiropractic Care in Marietta, GA</p>
             <h1 class="hero-title">Our Family<br>Caring for Yours</h1>
@@ -174,7 +192,16 @@
             </div>
             <div class="about-image">
                 <div class="image-frame">
-                    <img src="assets/about.png" alt="Warm, welcoming reception area at Sennebogen Chiropractic">
+                    <picture>
+                        <source type="image/avif"
+                            srcset="assets/about-320.avif 320w, assets/about-640.avif 640w, assets/about-1024.avif 1024w"
+                            sizes="(max-width: 768px) 100vw, 50vw">
+                        <source type="image/webp"
+                            srcset="assets/about-320.webp 320w, assets/about-640.webp 640w, assets/about-1024.webp 1024w"
+                            sizes="(max-width: 768px) 100vw, 50vw">
+                        <img src="assets/about.png" alt="Warm, welcoming reception area at Sennebogen Chiropractic"
+                            loading="lazy" decoding="async" width="1024" height="1024">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -189,9 +216,17 @@
             <div class="team-content">
                 <div class="team-image">
                     <div class="image-frame">
-                        <img src="assets/doctors_team.jpg"
-                            alt="Dr. Joe and Dr. Joey Sennebogen standing together in the chiropractic office"
-                            loading="lazy">
+                        <picture>
+                            <source type="image/avif"
+                                srcset="assets/doctors_team-320.avif 320w, assets/doctors_team-540.avif 540w"
+                                sizes="(max-width: 768px) 100vw, 50vw">
+                            <source type="image/webp"
+                                srcset="assets/doctors_team-320.webp 320w, assets/doctors_team-540.webp 540w"
+                                sizes="(max-width: 768px) 100vw, 50vw">
+                            <img src="assets/doctors_team.jpg"
+                                alt="Dr. Joe and Dr. Joey Sennebogen standing together in the chiropractic office"
+                                loading="lazy" decoding="async" width="540" height="516">
+                        </picture>
                     </div>
                 </div>
                 <div class="team-list">
@@ -235,7 +270,7 @@
         <div class="services-header">
             <p class="section-label">Services</p>
             <h2 class="section-title">Techniques & Modalities</h2>
-            <p class="about-text" style="max-width: 700px; margin: 0 auto;">We use a variety of techniques including
+            <p class="about-text services-intro">We use a variety of techniques including
                 chiropractic adjustments, soft tissue mobilization, corrective exercises, DOT physicals, and physical
                 modalities.</p>
         </div>
@@ -343,11 +378,13 @@
             <div class="contact-map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.647312345678!2d-84.5912!3d33.9645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDU3JzUyLjIiTiA4NMKwMzUnMjguMyJX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
-                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    width="100%" height="300" allowfullscreen="" loading="lazy"
                     title="Google Map showing location of Sennebogen Chiropractic"></iframe>
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">

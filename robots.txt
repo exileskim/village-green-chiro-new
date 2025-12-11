@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# TODO: Add Sitemap line once domain is final, e.g.:
+# Sitemap: https://YOUR-DOMAIN-HERE/sitemap.xml
+

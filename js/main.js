@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     // Mobile Navigation
     // --- Navigation Toggle ---
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const nav = document.querySelector('.nav');
 
-    if (navToggle) {
+    if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            // Animate hamburger to X (optional enhancement)
-            navToggle.classList.toggle('active');
+            const isOpen = navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active', isOpen);
+            navToggle.setAttribute('aria-expanded', String(isOpen));
         });
     }
 
@@ -17,7 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
-            if (navToggle) navToggle.classList.remove('active');
+            if (navToggle) {
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
         });
     });
 
@@ -45,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 window.scrollTo({
                     top: offsetPosition,
-                    behavior: 'smooth'
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
                 });
             }
         });
@@ -53,6 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Scroll Reveal Animation ---
     const revealElements = document.querySelectorAll('.reveal');
+
+    if (prefersReducedMotion) {
+        revealElements.forEach(el => el.classList.add('visible'));
+        return;
+    }
+
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
