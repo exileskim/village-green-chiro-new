@@ -6,24 +6,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const nav = document.querySelector('.nav');
+    const body = document.body;
+
+    const closeMenu = () => {
+        navMenu.classList.remove('active');
+        if (navToggle) {
+            navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+        body.classList.remove('nav-open');
+    };
 
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
             const isOpen = navMenu.classList.toggle('active');
             navToggle.classList.toggle('active', isOpen);
             navToggle.setAttribute('aria-expanded', String(isOpen));
+            body.classList.toggle('nav-open', isOpen);
         });
     }
 
     // --- Close Mobile Menu on Link Click ---
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            if (navToggle) {
-                navToggle.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-            }
+            closeMenu();
         });
+    });
+
+    // --- Close Mobile Menu on Escape ---
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            closeMenu();
+        }
     });
 
     // --- Smart Header (Scrolled State) ---
@@ -89,9 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting && !hasCounted) {
                 hasCounted = true;
                 trustNumbers.forEach(counter => {
-                    const text = counter.innerText;
+                    const text = counter.dataset.target || counter.innerText;
                     // Extract number and suffix (e.g., "36+" -> 36, "+")
                     const value = parseFloat(text.replace(/[^\d.]/g, ''));
+                    if (Number.isNaN(value)) return;
                     const isInt = text.indexOf('.') === -1;
                     const suffix = text.replace(/[\d.]/g, ''); // "+", "★"
 
@@ -102,6 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const stepTime = 20;
                     const steps = duration / stepTime;
                     const increment = target / steps;
+
+                    // Set starting value for animation
+                    counter.innerText = (isInt ? '0' : '0.0') + suffix;
 
                     const timer = setInterval(() => {
                         current += increment;
