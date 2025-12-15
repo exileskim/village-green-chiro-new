@@ -348,6 +348,8 @@ p {
     margin: 0 auto;
     padding-left: var(--space-lg);
     padding-right: var(--space-lg);
+    padding-bottom: var(--space-2xl);
+    /* Add space for scroll indicator */
     background-color: var(--color-espresso);
     background-image: radial-gradient(circle at 50% 40%, rgba(60, 56, 52, 1) 0%, var(--color-espresso) 70%);
     /* Subtle textured lighting */
@@ -435,7 +437,8 @@ p {
 
 .scroll-indicator {
     position: absolute;
-    bottom: var(--space-lg);
+    bottom: 2rem;
+    /* Lower it slightly */
     left: 50%;
     transform: translateX(-50%);
     color: var(--color-sand);
@@ -444,6 +447,8 @@ p {
     animation: bounce 2.5s infinite;
     text-decoration: none;
     transition: opacity 0.3s;
+    z-index: 10;
+    /* Ensure above background */
 }
 
 .scroll-indicator:hover {
@@ -928,6 +933,9 @@ section[id] {
     margin-top: var(--space-sm);
     font-size: 0.9rem;
     max-width: 300px;
+    color: var(--color-sand);
+    /* Better contrast vs dark bg */
+    opacity: 0.9;
 }
 
 .footer-nav {
@@ -938,6 +946,8 @@ section[id] {
 
 .footer-nav a {
     transition: color 0.3s ease;
+    color: var(--color-sand);
+    /* Better contrast */
 }
 
 .footer-nav a:hover,
@@ -957,6 +967,7 @@ section[id] {
 
 .footer-hours {
     font-size: 0.85rem;
+    color: var(--color-sand);
     opacity: 0.8;
 }
 
@@ -965,7 +976,9 @@ section[id] {
     padding-top: var(--space-lg);
     text-align: center;
     font-size: 0.8rem;
-    opacity: 0.6;
+    color: var(--color-sand);
+    opacity: 0.8;
+    /* Increased opacity for readability */
 }
 
 /* ================================
