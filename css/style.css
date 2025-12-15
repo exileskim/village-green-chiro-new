@@ -925,6 +925,13 @@ section[id] {
     text-transform: uppercase;
 }
 
+.footer-col p {
+    color: var(--color-sand);
+    line-height: 1.6;
+    margin-bottom: var(--space-sm);
+    opacity: 0.9;
+}
+
 .footer .nav-logo .logo-text {
     color: var(--color-cream);
 }
