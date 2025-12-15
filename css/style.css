@@ -16,6 +16,9 @@
     --color-espresso: #2A2623;
     --color-accent: #8C6C4C;
     --color-accent-light: #B89B7A;
+    /* New lighter accent for dark backgrounds */
+    --color-accent-hover: #7A5C3F;
+    /* Darker accent for hover states */
 
     /* Typography */
     --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -61,7 +64,8 @@ body {
     font-family: var(--font-body);
     font-weight: 400;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.8;
+    /* Airier reading experience */
     color: var(--color-charcoal);
     background-color: var(--color-cream);
 }
@@ -113,12 +117,17 @@ h3,
 h4 {
     font-family: var(--font-display);
     font-weight: 500;
-    line-height: 1.15;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    /* Premium "Tight" look */
     color: var(--color-espresso);
 }
 
 h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(3rem, 7vw, 5rem);
+    letter-spacing: -0.02em;
+    /* Tighter for display feel */
 }
 
 h2 {
@@ -152,7 +161,8 @@ p {
 
 .section-label::before {
     content: '';
-    width: 24px;
+    width: 40px;
+    /* Wider accent */
     height: 1px;
     background-color: var(--color-accent);
     display: block;
@@ -188,6 +198,8 @@ p {
 .btn-primary:hover {
     background-color: var(--color-accent);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(42, 38, 35, 0.15);
+    /* Soft shadow */
 }
 
 .btn-text {
@@ -323,20 +335,23 @@ p {
    ================================ */
 .hero {
     position: relative;
-    min-height: 85vh;
-    /* Increase height for impact */
+    min-height: 90vh;
+    /* Slightly taller for more drama */
     padding-top: var(--nav-height);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    max-width: var(--max-width);
+    max-width: 100%;
+    /* Full width background */
     margin: 0 auto;
     padding-left: var(--space-lg);
     padding-right: var(--space-lg);
-    background-image: radial-gradient(circle at 50% 50%, rgba(232, 226, 217, 0.3) 0%, transparent 70%);
-    /* Subtle glow */
+    background-color: var(--color-espresso);
+    background-image: radial-gradient(circle at 50% 40%, rgba(60, 56, 52, 1) 0%, var(--color-espresso) 70%);
+    /* Subtle textured lighting */
+    color: var(--color-cream);
 }
 
 .hero-content {
@@ -345,11 +360,12 @@ p {
 }
 
 .hero-tagline {
-    font-size: 0.875rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--color-accent);
+    color: var(--color-accent-light);
+    /* Lighter accent against dark bg */
     margin-bottom: var(--space-md);
     display: inline-flex;
     align-items: center;
@@ -358,23 +374,27 @@ p {
 
 .hero-tagline::before {
     content: '';
-    width: 32px;
+    width: 40px;
     height: 1px;
-    background-color: var(--color-accent);
+    background-color: var(--color-accent-light);
     display: block;
 }
 
 .hero-title {
     margin-bottom: var(--space-md);
-    font-size: clamp(3rem, 8vw, 5.5rem);
-    /* Slightly larger for text-only hero */
+    font-size: clamp(3.5rem, 9vw, 6rem);
+    /* Larger, more impressive */
+    line-height: 1.05;
+    color: var(--color-cream);
 }
 
 .hero-description {
-    font-size: 1.25rem;
-    max-width: 600px;
+    font-size: 1.35rem;
+    /* Slightly larger reading text */
+    max-width: 640px;
     margin: 0 auto var(--space-xl);
-    color: var(--color-charcoal);
+    color: var(--color-sand);
+    font-weight: 300;
 }
 
 .hero-actions {
@@ -385,22 +405,50 @@ p {
     justify-content: center;
 }
 
+/* Primary Button in Hero needs to stand out against dark bg */
+.hero .btn-primary {
+    background-color: var(--color-cream);
+    color: var(--color-espresso);
+}
+
+.hero .btn-primary:hover {
+    background-color: var(--color-accent-light);
+    color: var(--color-espresso);
+}
+
+.hero .btn-text {
+    color: var(--color-sand);
+}
+
+.hero .btn-text:hover {
+    color: var(--color-cream);
+}
+
 .hero-separator {
-    width: 60px;
-    height: 2px;
-    background-color: var(--color-accent);
+    width: 80px;
+    height: 1px;
+    /* Thinner line */
+    background-color: var(--color-accent-light);
     margin: var(--space-md) auto var(--space-lg);
+    opacity: 0.7;
 }
 
 .scroll-indicator {
     position: absolute;
-    bottom: var(--space-xl);
+    bottom: var(--space-lg);
     left: 50%;
     transform: translateX(-50%);
-    color: var(--color-accent);
-    font-size: 1.5rem;
-    animation: bounce 2s infinite;
+    color: var(--color-sand);
+    font-size: 2rem;
+    opacity: 0.6;
+    animation: bounce 2.5s infinite;
     text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+    color: var(--color-cream);
 }
 
 @keyframes bounce {
@@ -422,48 +470,9 @@ p {
     }
 }
 
-/* ================================
-   TRUST BAR
-   ================================ */
-.trust-bar {
-    background-color: var(--color-espresso);
-    padding: var(--space-lg) 0;
-}
-
-.trust-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 var(--space-lg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-xl);
-}
-
-.trust-item {
-    text-align: center;
-}
-
-.trust-number {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 600;
+.hero-description strong {
     color: var(--color-cream);
-}
-
-.trust-label {
-    font-size: 0.75rem;
     font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-clay);
-}
-
-.trust-divider {
-    width: 1px;
-    height: 40px;
-    background-color: var(--color-charcoal);
 }
 
 /* ================================
@@ -471,6 +480,8 @@ p {
    ================================ */
 .section {
     padding: var(--space-3xl) var(--space-lg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    /* Subtle dividers */
 }
 
 section[id] {
@@ -616,7 +627,8 @@ section[id] {
    SERVICES
    ================================ */
 .services {
-    background-color: var(--color-sand);
+    background-color: var(--color-cream);
+    /* Clean canvas instead of Sand */
 }
 
 .services-header {
@@ -641,26 +653,22 @@ section[id] {
 }
 
 .service-card {
-    /* 
-       Calc: (100% - (2 * gap)) / 3 
-       We want 3 items per row. Gap is space-md (assume 24px or similar).
-       Let's use a safe percentage basis.
-    */
+    /* Refined Minimalist Card */
     flex: 0 1 calc(33.333% - var(--space-md));
     min-width: 300px;
-    background-color: var(--color-cream);
+    background-color: transparent;
+    /* Remove heavy background */
     padding: var(--space-lg);
     transition: all var(--duration) var(--ease-out);
+    border: 1px solid var(--color-sand);
+    /* Elegant border */
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     height: auto;
-    /* Allow stretch */
 }
-
-/* Ensure centering on the last row (Flexbox does this automatically with justify-content: center) */
 
 /* Mobile adjustment */
 @media (max-width: 900px) {
@@ -678,7 +686,10 @@ section[id] {
 
 .service-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-accent);
+    /* Highlight border on hover */
+    background-color: #fff;
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.1);
 }
 
 .service-icon {
@@ -720,26 +731,26 @@ section[id] {
 }
 
 .testimonial {
-    background-color: var(--color-cream);
-    border: 1px solid var(--color-sand);
-    padding: var(--space-xl);
-    text-align: left;
-    border-radius: 4px;
+    background-color: transparent;
+    border: none;
+    /* Removed boxy border */
+    padding: var(--space-xl) var(--space-md);
+    text-align: center;
+    /* Centered editorial feel */
     position: relative;
-    overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .testimonial::before {
     content: '“';
-    position: absolute;
-    top: -20px;
-    right: 20px;
+    display: block;
     font-family: var(--font-display);
-    font-size: 8rem;
-    color: var(--color-sand);
-    opacity: 0.5;
-    line-height: 1;
-    pointer-events: none;
+    font-size: 6rem;
+    color: var(--color-accent-light);
+    opacity: 0.3;
+    line-height: 0.5;
+    margin-bottom: var(--space-md);
 }
 
 .testimonial p {
