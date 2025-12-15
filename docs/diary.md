@@ -1,5 +1,14 @@
 # Developer Diary
 
+## 2025-12-15
+
+### UI/UX Iteration (Navigation + Conversion)
+- **Navigation**: Added scrollspy active-link state, improved mobile menu accessibility (focus trap + dynamic `aria-label`), and ensured nav works without JS on small screens.
+- **Mobile CTA**: Added a sticky “Call / Directions” action bar to boost conversions (auto-hides when the mobile menu is open).
+- **Hero (Mobile)**: Reduced vertical spacing for better above-the-fold visibility and removed the redundant hero phone link on mobile (handled by sticky CTA).
+- **Contact**: Added “Get Directions” link and updated the Google Maps embed URL to a stable address-based embed.
+- **Content & A11y**: Cleaned testimonial quote formatting, tightened doctor bio wording, and marked decorative icons as `aria-hidden`.
+
 ## 2025-12-07
 
 ### Website Content & Layout Updates

@@ -114,14 +114,14 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" aria-label="Primary">
         <div class="nav-inner">
             <a href="#" class="nav-logo">
                 <span class="logo-text">Sennebogen</span>
                 <span class="logo-sub">Chiropractic</span>
             </a>
 
-            <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-controls="nav-menu"
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="nav-menu"
                 aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -132,33 +132,34 @@
                 <a href="#team">Team</a>
                 <a href="#services">Services</a>
                 <a href="#testimonials">Testimonials</a>
-                <a href="#contact" class="nav-cta">Schedule Visit</a>
+                <a href="#contact" class="nav-cta">Schedule a Visit</a>
             </div>
         </div>
     </nav>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
 
         <!-- Hero -->
         <header class="hero">
-        <div class="hero-content">
-            <p class="hero-tagline">Chiropractic Care in Marietta, GA</p>
-            <h1 class="hero-title">Our Family<br>Caring for Yours</h1>
-            <div class="hero-separator"></div>
-            <p class="hero-description">Dr. Joe and Dr. Joey Sennebogen — a father-son team dedicated to restoring your
-                health through personalized, compassionate chiropractic care.</p>
-            <div class="hero-actions">
-                <a href="#contact" class="btn btn-primary">Book Appointment</a>
-                <a href="tel:7704243331" class="btn btn-text">
-                    <span class="btn-icon">📞</span>
-                    (770) 424-3331
-                </a>
+            <div class="hero-content">
+                <p class="hero-tagline">Chiropractic Care in Marietta, GA</p>
+                <h1 class="hero-title">Our Family<br>Caring for Yours</h1>
+                <div class="hero-separator"></div>
+                <p class="hero-description">Dr. Joe and Dr. Joey Sennebogen — a father-son team dedicated to restoring
+                    your
+                    health through personalized, compassionate chiropractic care.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">Schedule a Visit</a>
+                    <a href="tel:7704243331" class="btn btn-text">
+                        <span class="btn-icon" aria-hidden="true">📞</span>
+                        (770) 424-3331
+                    </a>
+                </div>
             </div>
-        </div>
-        <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
-            <span class="scroll-arrow">↓</span>
-        </a>
-    </header>
+            <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+                <span class="scroll-arrow" aria-hidden="true">↓</span>
+            </a>
+        </header>
 
     <!-- Trust Bar -->
     <section class="trust-bar">
@@ -186,7 +187,7 @@
             <div class="about-content">
                 <p class="section-label">Our Philosophy</p>
                 <h2 class="section-title">A Holistic Approach to Care</h2>
-                <p class="about-text">Sennebogen Chiropractic is a family operated office that provides patients with a
+                <p class="about-text">Sennebogen Chiropractic is a family-operated office that provides patients with a
                     holistic approach to care. Our goal is to help you achieve a more effective life, to restore and
                     maintain full function, and ensure your overall well-being.</p>
                 <p class="about-text">We focus on the human body and how it functions by using a variety of chiropractic
@@ -237,12 +238,10 @@
                     <article class="team-member">
                         <span class="team-bg">Founder & Chiropractor</span>
                         <h3>Dr. Joseph Sennebogen Sr., DC, CCSP</h3>
-                        <p>Dr. Joseph Sennebogen Sr. attended Life University in Marietta, Georgia, where he graduated
-                            with
-                            a doctorate degree in Chiropractic in 1987.</p>
-                        <p>He is a board Certified Chiropractic Sports Practitioner and also received a Certified
-                            Personnel
-                            Trainer Degree from The National Academy of Sports Medicine.</p>
+                        <p>Dr. Joseph Sennebogen Sr. attended Life University in Marietta, Georgia, where he earned his
+                            Doctor of Chiropractic (D.C.) degree in 1987.</p>
+                        <p>He is a board-certified Chiropractic Sports Practitioner (CCSP) and holds a Certified
+                            Personal Trainer credential through the National Academy of Sports Medicine.</p>
                         <p>Dr. Joe has been providing chiropractic care to families and local athletes in the
                             Marietta area for more than 36 years.</p>
                     </article>
@@ -252,11 +251,11 @@
                         <h3>Dr. Joseph Sennebogen Jr., DC, MS, CCSP</h3>
                         <p>Dr. Joey received his Bachelor's Degree in Biology from Georgia College in Milledgeville,
                             Georgia.
-                            He graduated Summa Cum Laude with his Doctorate Of Chiropractic from Life University and
+                            He graduated Summa Cum Laude with his Doctor of Chiropractic from Life University, along
                             with
-                            his Master's Degree in Sports Health Science.</p>
-                        <p>He is a Certified Chiropractic Sports Practitioner (CCSP). While finishing his Master's
-                            Degree,
+                            his Master's degree in Sports Health Science.</p>
+                        <p>He is a Certified Chiropractic Sports Practitioner (CCSP). While finishing his master's
+                            degree,
                             Dr. Joey worked under Dr. Keith Rau as a team chiropractor for Life & Kennesaw State
                             University.
                         </p>
@@ -280,27 +279,27 @@
         </div>
         <div class="services-grid">
             <article class="service-card">
-                <span class="service-icon">🦴</span>
+                <span class="service-icon" aria-hidden="true">🦴</span>
                 <h3>Chiropractic Adjustments</h3>
                 <p>Specific adjustments to address dysfunction in the bones and joints of the spine and extremities.</p>
             </article>
             <article class="service-card">
-                <span class="service-icon">💆</span>
+                <span class="service-icon" aria-hidden="true">💆</span>
                 <h3>Soft Tissue Mobilization</h3>
                 <p>Techniques to address muscle dysfunction and promote healing.</p>
             </article>
             <article class="service-card">
-                <span class="service-icon">🏋️</span>
+                <span class="service-icon" aria-hidden="true">🏋️</span>
                 <h3>Corrective Exercises</h3>
                 <p>Tailored exercises to restore function, stability, and strength.</p>
             </article>
             <article class="service-card">
-                <span class="service-icon">🚛</span>
+                <span class="service-icon" aria-hidden="true">🚛</span>
                 <h3>DOT Physicals</h3>
                 <p>Certified Department of Transportation physical examinations.</p>
             </article>
             <article class="service-card">
-                <span class="service-icon">⚡</span>
+                <span class="service-icon" aria-hidden="true">⚡</span>
                 <h3>Physical Modalities</h3>
                 <p>Therapeutic modalities to manage pain, reduce inflammation, and accelerate healing.</p>
             </article>
@@ -315,25 +314,25 @@
 
             <div class="testimonial-cards">
                 <blockquote class="testimonial">
-                    <p>"Dr. Joe is the best! He is very knowledgeable and truly cares about his patients. The entire
+                    <p>Dr. Joe is the best! He is very knowledgeable and truly cares about his patients. The entire
                         office is first rate and just the loveliest people. I highly recommend Sennebogen
-                        Chiropractic."</p>
+                        Chiropractic.</p>
                     <cite>— Amy K.</cite>
                 </blockquote>
                 <blockquote class="testimonial">
-                    <p>"Dr. Joe is a wonderful chiropractor. He is very knowledgeable and always makes me feel
-                        comfortable during my adjustments. The office staff is also very friendly and helpful."</p>
+                    <p>Dr. Joe is a wonderful chiropractor. He is very knowledgeable and always makes me feel
+                        comfortable during my adjustments. The office staff is also very friendly and helpful.</p>
                     <cite>— Kaitlyn G.</cite>
                 </blockquote>
                 <blockquote class="testimonial">
-                    <p>"I've been a patient for over 10 years. Dr. Joe always takes the time to listen and provides
+                    <p>I've been a patient for over 10 years. Dr. Joe always takes the time to listen and provides
                         excellent care. The new addition of Dr. Joey has been wonderful — he's just as skilled and
-                        personable as his father!"</p>
+                        personable as his father!</p>
                     <cite>— Michael R.</cite>
                 </blockquote>
                 <blockquote class="testimonial">
-                    <p>"As someone who was nervous about seeing a chiropractor for the first time, they made me feel
-                        completely at ease. Professional, thorough, and genuinely caring. Highly recommend!"</p>
+                    <p>As someone who was nervous about seeing a chiropractor for the first time, they made me feel
+                        completely at ease. Professional, thorough, and genuinely caring. Highly recommend!</p>
                     <cite>— Sarah T.</cite>
                 </blockquote>
             </div>
@@ -361,6 +360,12 @@
                 <a href="tel:7704243331" class="contact-phone" aria-label="Call Sennebogen Chiropractic">(770)
                     424-3331</a>
 
+                <a class="contact-directions"
+                    href="https://www.google.com/maps/dir/?api=1&destination=3880+Due+West+Rd+NW+Suite+100+Marietta+GA+30064"
+                    target="_blank" rel="noopener noreferrer">
+                    Get Directions →
+                </a>
+
                 <div class="contact-hours">
                     <h4>Office Hours</h4>
                     <dl>
@@ -381,8 +386,9 @@
             </div>
             <div class="contact-map">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.647312345678!2d-84.5912!3d33.9645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDU3JzUyLjIiTiA4NMKwMzUnMjguMyJX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                    src="https://www.google.com/maps?output=embed&q=3880%20Due%20West%20Rd%20NW%20Suite%20100%2C%20Marietta%2C%20GA%2030064"
                     width="100%" height="300" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
                     title="Google Map showing location of Sennebogen Chiropractic"></iframe>
             </div>
         </div>
@@ -406,7 +412,7 @@
                 <!-- Links Column -->
                 <div class="footer-col">
                     <h4>Quick Links</h4>
-                    <nav class="footer-nav">
+                    <nav class="footer-nav" aria-label="Footer">
                         <a href="#about">About Us</a>
                         <a href="#team">Our Team</a>
                         <a href="#services">Services</a>
@@ -429,6 +435,19 @@
             </div>
         </div>
     </footer>
+
+    <nav class="mobile-cta" aria-label="Quick actions">
+        <a class="mobile-cta-button" href="tel:7704243331">
+            <span class="mobile-cta-icon" aria-hidden="true">📞</span>
+            Call
+        </a>
+        <a class="mobile-cta-button"
+            href="https://www.google.com/maps/dir/?api=1&destination=3880+Due+West+Rd+NW+Suite+100+Marietta+GA+30064"
+            target="_blank" rel="noopener noreferrer">
+            <span class="mobile-cta-icon" aria-hidden="true">📍</span>
+            Directions
+        </a>
+    </nav>
 
     <script src="js/main.js"></script>
 </body>
